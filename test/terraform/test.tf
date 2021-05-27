@@ -27,7 +27,7 @@ provider "aws" {
 }
 
 module "aws_deploy-test" {
-  source              = "github.com/aeternity/terraform-aws-aenode-deploy?ref=v2.3.1"
+  source              = "github.com/aeternity/terraform-aws-aenode-deploy?ref=v2.6.0"
   env                 = "${var.env_name}"
   envid               = "${var.envid}"
   bootstrap_version   = "${var.bootstrap_version}"
@@ -46,17 +46,13 @@ module "aws_deploy-test" {
   additional_storage      = true
   additional_storage_size = 5
 
-  aeternity = {
-    package = "${var.package}"
-  }
-
   providers = {
-    aws = "aws.ap-southeast-2"
+    aws = aws.ap-southeast-2
   }
 }
 
 module "aws_deploy-test-ubuntu-bionic" {
-  source              = "github.com/aeternity/terraform-aws-aenode-deploy?ref=v2.3.1"
+  source              = "github.com/aeternity/terraform-aws-aenode-deploy?ref=v2.6.0"
   env                 = "${var.env_name}"
   envid               = "${var.envid}"
   bootstrap_version   = "${var.bootstrap_version}"
@@ -75,11 +71,7 @@ module "aws_deploy-test-ubuntu-bionic" {
   additional_storage      = true
   additional_storage_size = 5
 
-  aeternity = {
-    package = "${var.package}"
-  }
-
   providers = {
-    aws = "aws.ap-southeast-2"
+    aws = aws.ap-southeast-2
   }
 }
