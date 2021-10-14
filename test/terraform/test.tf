@@ -46,10 +46,6 @@ module "aws_deploy-test-ubuntu-bionic" {
   additional_storage      = true
   additional_storage_size = 5
 
-  aeternity = {
-    package = "${var.package}"
-  }
-
   providers = {
     aws = "aws.ap-southeast-2"
   }
